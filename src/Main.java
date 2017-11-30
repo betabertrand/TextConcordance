@@ -21,9 +21,8 @@ public class Main {
         } catch (FileNotFoundException ex) {
             System.out.println("File not found");
         }
-        Map<String, ArrayList<Pair<Integer, String>>> pairMap = new HashMap<>();
+        Map<String, ArrayList<Pair<Integer, String>>> pairMap
 
-//        System.out.println(makeSentencePerLine(text));
         text = makeSentencePerLine(text);
         findAllKeyWords(text);
         pairMap = concordance(text);
@@ -77,16 +76,11 @@ public class Main {
             }
         }
 
-//        System.out.println(concordanceMap.toString());
         return concordanceMap;
     }
 
 
-    public static Map<String, ArrayList<Pair<Integer, String>>> findAllKeyWords(String text) {
-
-        Map<String, Integer> wordMap = new HashMap<>();
-        Map<Integer, String> mMap = new HashMap<>();
-        Map<Map<Integer, String>, String> superMap = new HashMap();
+    public static Map<String, ArrayList<Pair<Integer, String>>> findAllKeyWords(String text) { //finds all keywords and prints the line they occur in. not needed to find concordance
 
         Map<String, ArrayList<Pair<Integer, String>>> pairMap = new HashMap<>();
         int count = 0;
@@ -113,21 +107,11 @@ public class Main {
                             pair = new Pair<>(count, word);
                             tempPairList.add(pair);
 
-                            //pairMap.get(word).add(pair);
                             pairMap.put(word,tempPairList);
                     }
                 }
             }
         }
-
-//        for (ArrayList<Pair<Integer, String>> key : pairMap.values()) {
-//
-//            for (int i = 0; i < key.size(); i++) {
-//                System.out.print(key.get(i).toString() + " ");
-//            }
-//            System.out.println();
-//        }
-
 
         return pairMap;
     }
@@ -137,8 +121,6 @@ public class Main {
         Pattern pattern = Pattern.compile("[.!?]");
         Matcher matcher = pattern.matcher(text2);
 
-        StringBuilder superString = new StringBuilder(text2);
-
         String string = matcher.replaceAll(".\n");
 
         try (PrintWriter output = new PrintWriter("newwwww.txt")) {
@@ -147,7 +129,6 @@ public class Main {
 
         }
 
-//        System.out.println(string);
         return string;
     }
 }
@@ -164,4 +145,15 @@ if (wordMap.containsKey(word)) {
                     } else {
                         wordMap.put(word, 1);
                     }
+
+
+//        for (ArrayList<Pair<Integer, String>> key : pairMap.values()) {
+//
+//            for (int i = 0; i < key.size(); i++) {
+//                System.out.print(key.get(i).toString() + " ");
+//            }
+//            System.out.println();
+//        }
+
+
  */

@@ -1,0 +1,4 @@
+If you want to include text "as is" like the one you are just reading
+all you need to is use the PRE tag. This will allow you to display
+text exactly as you type it.  It will give you a line break wherever
+you press Enter, like here.

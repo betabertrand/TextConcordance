@@ -21,7 +21,7 @@ public class Main {
         } catch (FileNotFoundException ex) {
             System.out.println("File not found");
         }
-        Map<String, ArrayList<Pair<Integer, String>>> pairMap
+        Map<String, ArrayList<Pair<Integer, String>>> pairMap;
 
         text = makeSentencePerLine(text);
         findAllKeyWords(text);
